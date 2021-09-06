@@ -2,6 +2,16 @@
 
 This project is cretaed to implement MVVM artitecture using Provider & HTTP lib also create a res folder to access all the resource like color, dimention & string from the single place only.
 I have also integrate multilanguage support for the flutter app how to implemwnt this in flutter.
+
+<div align="left">
+    <img src="https://github.com/maraj91/flutter_mvvm/blob/master/screenshot/Screenshot_1630953449.png" width="400px"</img> 
+</div>
+
+
+<div align="right">
+    <img src="https://github.com/maraj91/flutter_mvvm/blob/master/screenshot/Screenshot_1630953438.png" width="400px"</img> 
+</div>
+
 ## Getting Started
 
 A few resources to get you started for the MVVM artitecture in flutter:
