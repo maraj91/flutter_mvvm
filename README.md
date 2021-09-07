@@ -1,6 +1,6 @@
 # project
 
-This project is cretaed to implement MVVM artitecture using Provider & HTTP lib also create a res folder to access all the resource like color, dimention & string from the single place only.
+This project is created to implement MVVM architecture using Provider & HTTP lib also create a res folder to access all the resource like color, dimention & string from the single place only.
 I have also integrate multilanguage support for the flutter app how to implemwnt this in flutter.
 
 <div align="left">
@@ -11,6 +11,8 @@ I have also integrate multilanguage support for the flutter app how to implemwnt
 <div align="right">
     <img src="https://github.com/maraj91/flutter_mvvm/blob/master/screenshot/Screenshot_1630953438.png" width="400px"</img> 
 </div>
+
+For more detail on the project you can read [here ->](https://medium.com/@ermarajhussain/flutter-mvvm-architecture-best-practice-using-provide-http-4939bdaae171)
 
 ## Getting Started
 
