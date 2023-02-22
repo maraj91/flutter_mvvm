@@ -12,7 +12,6 @@ import '../widget/MyErrorWidget.dart';
 import '../widget/LoadingWidget.dart';
 
 class HomeScreen extends StatefulWidget {
-
   static final String id = "home_screen";
 
   @override
@@ -32,11 +31,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: MyTextView(context.resources.strings.homeScreen, context.resources.color.colorWhite, context.resources.dimension.bigText)),
+        title: Center(
+            child: MyTextView(
+                context.resources.strings.homeScreen,
+                context.resources.color.colorWhite,
+                context.resources.dimension.bigText)),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: ChangeNotifierProvider<MoviesListVM>(
-        create: (BuildContext context) => viewModel,
+      body: ChangeNotifierProvider<MoviesListVM>.value(
+        value: viewModel,
         child: Consumer<MoviesListVM>(builder: (context, viewModel, _) {
           switch (viewModel.movieMain.status) {
             case Status.LOADING:
@@ -77,16 +80,31 @@ class _HomeScreenState extends State<HomeScreen> {
             width: context.resources.dimension.listImageSize,
             height: context.resources.dimension.listImageSize,
           ),
-          borderRadius: BorderRadius.circular(context.resources.dimension.imageBorderRadius),
+          borderRadius: BorderRadius.circular(
+              context.resources.dimension.imageBorderRadius),
         ),
-        title: MyTextView(item.title ?? "NA",context.resources.color.colorPrimaryText,context.resources.dimension.bigText),
-        subtitle: MyTextView(item.year??"NA",context.resources.color.colorSecondaryText,context.resources.dimension.mediumText),
+        title: MyTextView(
+            item.title ?? "NA",
+            context.resources.color.colorPrimaryText,
+            context.resources.dimension.bigText),
+        subtitle: MyTextView(
+            item.year ?? "NA",
+            context.resources.color.colorSecondaryText,
+            context.resources.dimension.mediumText),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            MyTextView("${Utils.setAverageRating(item.ratings ?? [])}",context.resources.color.colorBlack,context.resources.dimension.mediumText),
-            SizedBox(width: context.resources.dimension.verySmallMargin,),
-            Icon(Icons.star,color: context.resources.color.colorAccent,),
+            MyTextView(
+                "${Utils.setAverageRating(item.ratings ?? [])}",
+                context.resources.color.colorBlack,
+                context.resources.dimension.mediumText),
+            SizedBox(
+              width: context.resources.dimension.verySmallMargin,
+            ),
+            Icon(
+              Icons.star,
+              color: context.resources.color.colorAccent,
+            ),
           ],
         ),
         onTap: () {
@@ -98,6 +116,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _sendDataToMovieDetailScreen(BuildContext context, Movie item) {
-    Navigator.pushNamed(context, MovieDetailsScreen.id,arguments: item);
+    Navigator.pushNamed(context, MovieDetailsScreen.id, arguments: item);
   }
 }
